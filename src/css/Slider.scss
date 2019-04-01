@@ -1,0 +1,49 @@
+@import 'variables';
+.slider{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 100px;
+  width: 100%;
+  height: 730px;
+  img{
+    width: 100%;
+  }
+}
+.slider__text-block{
+  padding: 30px 30%;
+  text-align: center;
+  color: $color-white;
+  h2{
+    font-weight: 700;
+    font-size: 250%;
+  }
+  span::before{
+    content: "";
+    width: 100px;
+    display: inline-block;
+    height: 2px;
+    background: $color-white;;
+    position: relative;
+    left: -15px;
+    top: -5px;
+  }
+  span{
+    white-space: nowrap;
+  }
+  span::after{
+    content: "";
+    width: 100px;
+    display: inline-block;
+    height: 2px;
+    background: $color-white;;
+    position: relative;
+    right: -15px;
+    top: -5px;
+
+  }
+  p{
+    padding-top: 30px;
+    font-size: 130%;
+  }
+}

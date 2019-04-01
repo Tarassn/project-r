@@ -14,7 +14,6 @@ export default class Header extends Component {
             burgerOpen:false,
             navOpen:false,
             width: 0,
-            height: 0
         };
     componentDidMount(){
         this.updateWindowDimensions();
@@ -27,7 +26,7 @@ export default class Header extends Component {
     }
 
     updateWindowDimensions = () => {
-        this.setState({ width: window.innerWidth, height: window.innerHeight });
+        this.setState({ width: window.innerWidth });
     };
     componentDidUpdate(){
 

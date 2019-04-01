@@ -1,6 +1,9 @@
 // This is just some sample data!
 import bodo1 from './css/images/bodo1.jpg';
-import bodo2 from './css/images/bodo2.jpg'
+import bodo2 from './css/images/bodo2.jpg';
+import hero1 from './css/images/hero1.jpg';
+import hero2 from './css/images/hero2.jpg';
+
 export const navObj = {
     navItem1: {
         name:'Каталог впечатлений',
@@ -36,5 +39,7 @@ export const navObj = {
         name:'Использовать сертификат',
         subItems:{},
     },
-
 };
+
+export const sliderItems = [hero1,hero2]
+;
