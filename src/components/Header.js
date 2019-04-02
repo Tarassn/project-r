@@ -22,7 +22,6 @@ export default class Header extends Component {
 
     componentWillUnmount(){
         window.removeEventListener('resize', this.updateWindowDimensions);
-
     }
 
     updateWindowDimensions = () => {
@@ -69,7 +68,7 @@ export default class Header extends Component {
     };
     render() {
         return (
-            <div className="header">
+            <header className="header">
                 <a href='#'>
                     <img src={logo} alt="logo" className="header__logo-img"/>
                 </a>
@@ -107,7 +106,7 @@ export default class Header extends Component {
                     burgerOpen={this.state.burgerOpen}
                     toggleBurger={this.toggleBurger}
                 />
-            </div>
+            </header>
         );
     }
 }

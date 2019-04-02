@@ -35,9 +35,9 @@ export default class Slider extends Component {
         this.timer();
     }
 
-    componentDidUpdate(){
-    }
+    componentWillUnmount(){
 
+    }
 
 
     render(){

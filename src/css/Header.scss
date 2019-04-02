@@ -1,7 +1,8 @@
 @import "variables";
 .header {
+  width: 100%;
   position: fixed;
-  min-height: 100px;
+  min-height: 80px;
   top:0;
   left: 0;
   right: 0;
@@ -11,8 +12,9 @@
   justify-content: space-between;
   background: $color-white;
   align-items: center;
-  z-index: 1;
+  z-index: 5;
   box-shadow: $box-shadow1;
+  box-sizing: border-box;
   .header__search-img{
     width: 14px;
   }
@@ -36,13 +38,13 @@
     display: none;
     text-transform: none;
     position: fixed;
-    top: 100px;
+    top: 86px;
     left: 3%;
     right: 3%;
     width: 94%;
     border: 1px solid #e1e1e1;
     background-color: $color-white;
-    color:$color-grey;
+    color:$color-black;
     list-style: none;
     line-height: 2.2;
     flex-direction: row;
@@ -99,7 +101,8 @@
   text-transform: uppercase;
   white-space: nowrap;
   font-size: 90%;
-  color:$color-grey;
+  font-weight: 600;
+  color:$color-black;
   a{
     text-decoration: none;
     color:$color-grey;
@@ -116,7 +119,7 @@
     height: 4px;
     width: 44px;
     background: $color-red;
-    bottom: -32px;
+    bottom: -22px;
     left: 0;
     right: 0;
     margin: 0 auto;
