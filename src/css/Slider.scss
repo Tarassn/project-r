@@ -2,18 +2,26 @@
 .slider{
   display: flex;
   align-items: center;
-  justify-content: center;
+  position: relative;
+  justify-content: left;
+  background-color: $color-red;
   margin-top: 60px;
   width: 100%;
-  height: 730px;
+  height: 520px;
   box-sizing: border-box;
+  overflow: hidden;
   img{
-    width: 100%;
+    transform: rotate(15deg);
+    width: auto;
+    height: 100%;
+    position: absolute;
+    right: -100px;
+    top: -20px;
   }
 }
 .slider__text-block{
-  padding: 30px 30%;
-  text-align: center;
+  z-index: 1;
+  padding: 30px 5%;
   color: $color-white;
   h2{
     font-weight: 700;
@@ -21,7 +29,7 @@
   }
   span::before{
     content: "";
-    width: 100px;
+    width: 80px;
     display: inline-block;
     height: 2px;
     background: $color-white;;
@@ -31,10 +39,11 @@
   }
   span{
     white-space: nowrap;
+    margin-left: 15px;
   }
   span::after{
     content: "";
-    width: 100px;
+    width: 80px;
     display: inline-block;
     height: 2px;
     background: $color-white;;

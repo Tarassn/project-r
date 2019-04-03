@@ -1,11 +1,12 @@
 import React, { Component } from 'react';
 import {navObj as navObj} from '../data-file';
 import logo from "../css/images/logo.png";
-import searchIcon from "../css/images/searchIcon.svg"
-import cartIcon from "../css/images/shopping-cart-of-checkered-design.png"
-import "../css/Header.scss"
-import Burger from './Burger'
-import NavigationItem from "./NavigationItem"
+import searchIcon from "../css/images/searchIcon.svg";
+import cartIcon from "../css/images/shopping-cart-of-checkered-design.png";
+import "../css/Header.scss";
+import Burger from './Burger';
+import NavigationItem from "./NavigationItem";
+import {Link} from "react-router-dom";
 
 export default class Header extends Component {
         state = {
@@ -99,7 +100,9 @@ export default class Header extends Component {
                         }/>
                     </div>
                     <div className="navigation__buttons">
+                        <Link to={"/UseCertificate"}>
                         <img className={'cartIcon'} src={cartIcon} alt={"Cart"}/>
+                        </Link>
                     </div>
                 </div>
                 <Burger

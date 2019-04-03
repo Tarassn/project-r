@@ -1,0 +1,79 @@
+@import "variables";
+.categories{
+  position: relative;
+  input{
+    display: none;
+  }
+}
+.categories__category{
+  display: inline-block;
+  font-size: 110%;
+  color: $color-red;
+  width: 200px;
+}
+.categories-checkbox + label:after{
+  content: '>';
+  display: inline-block;
+  transform: rotate(90deg);
+  padding: 0 10px;
+  color: $color-black;
+}
+.categories-checkbox{
+  display: none;
+}
+.categories-checkbox+ label{
+  box-sizing: border-box;
+  padding:20px 34px;
+  cursor: pointer;
+  user-select: none;
+}
+.categories-checkbox:checked + label{
+  background-color: $color-pink;
+}
+.categories-checkbox:checked + label:after {
+  content: '-';
+  transform: rotate(0);
+}
+.categories__submenu{
+  z-index: 3;
+  display: none;
+  width: 200px;
+  text-transform: none;
+  box-sizing: border-box;
+  position: absolute;
+  top: 40px;
+  left: 0;
+  list-style: none;
+  background-color: $color-pink;
+  line-height: 1.8;
+  padding:30px;
+}
+.categories__submenu li>input{
+  display: none;
+}
+.categories__submenu li>label{
+  color:$color-black;
+  font-size: 90%;
+  cursor:pointer;
+  user-select: none;
+}
+
+.categories__submenu li>label:before{
+
+}
+.categories__submenu li>label span{
+  display:inline-block;
+  width:19px;
+  height:19px;
+  margin-right: 10px;
+  vertical-align:middle;
+  background:url("../css/images/unchecked-checkbox.png");
+  background-size: cover;
+}
+.categories__submenu li>input:checked + label span{
+  background:url("../css/images/checked-checkbox.png");
+  background-size: cover;
+}
+.categories-checkbox:checked ~ .categories__submenu{
+  display: block;
+}

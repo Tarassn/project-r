@@ -1,0 +1,19 @@
+@import "variables";
+.filters{
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.filters__price{
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  width: 200px;
+}
+.filters__price:before{
+  color:$color-red;
+  content: "Цена:";
+  font-size: 110%;
+  padding-right: 15px;
+}

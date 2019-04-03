@@ -8,8 +8,10 @@ class Product extends Component {
         return (
             <section className="product">
                 <img src={image} alt={title}/>
-                <h2>{title}</h2>
-                <p>{text}</p>
+                <div className="product__text">
+                    <h2>{title}</h2>
+                    <p>{text}</p>
+                </div>
                 <div className="product__desc">
                     <span>{price}грн</span>
                     <span>{participants}чел.</span>

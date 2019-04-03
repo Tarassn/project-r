@@ -9,7 +9,10 @@ import Products from "./components/Products";
 
 class App extends Component {
     state={
-        products:{}
+        products:{},
+        priceFilter:{
+            value: { min: 250, max: 9000 },
+        }
     };
     componentDidMount(){
         this.loadProducts()
@@ -17,13 +20,20 @@ class App extends Component {
     loadProducts = () =>{
         this.setState({products:products})
     };
+    priceFilterChange = (priceRange) => {
+        this.setState({priceFilter:{
+            value:priceRange
+            }})
+    };
   render() {
     return (
       <div className="App">
           <Header/>
           <main>
               <Slider/>
-              <Filters/>
+              <Filters
+              priceFilter={this.state.priceFilter}
+              priceFilterChange={this.priceFilterChange}/>
               <Products
               products={this.state.products}/>
           </main>
