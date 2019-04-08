@@ -1,0 +1,26 @@
+@import 'variables';
+.sort-products{
+  label{
+    color: $color-red;
+    display: flex;
+    align-items: center;
+    select{
+      display: inline-flex;
+      text-align: center;
+      outline: none;
+      margin: 5px;
+      -webkit-appearance: button;
+      font-weight: 500;
+      font-size: 80%;
+      border: 0;
+      border-radius: 3px;
+      color: $color-black;
+      padding: 2px 3px;
+      background-color: $color-pink;
+      transition: background-color 0.3s;
+      position: relative;
+      z-index: 1;
+      cursor: pointer;
+    }
+  }
+}

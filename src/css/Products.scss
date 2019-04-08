@@ -1,14 +1,15 @@
 @import 'variables';
 .products{
   width: 100%;
+  min-height: 200px;
   display: flex;
   flex-direction: row;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: baseline;
   flex-wrap: wrap;
 }
 .product{
-   width: 33%;
+   width: 33.3%;
    min-width: 310px;
    padding: 20px;
    cursor: pointer;
@@ -63,3 +64,9 @@
 }
 .product__desc_btn:hover{
   background-color: $color-dark-green}
+
+@media screen and (max-width: 1024px) {
+  .products{
+    justify-content: center;
+  }
+}

@@ -7,6 +7,7 @@ import "../css/Header.scss";
 import Burger from './Burger';
 import NavigationItem from "./NavigationItem";
 import {Link} from "react-router-dom";
+import Cart from "./Cart";
 
 export default class Header extends Component {
         state = {
@@ -15,6 +16,7 @@ export default class Header extends Component {
             burgerOpen:false,
             navOpen:false,
             width: 0,
+            cartOpen:false,
         };
     componentDidMount(){
         this.updateWindowDimensions();
@@ -50,7 +52,11 @@ export default class Header extends Component {
             burgerOpen: !(this.state.burgerOpen),
         });
         e.currentTarget.classList.toggle('open')
-
+    };
+    toggleCart = () => {
+        this.setState({
+            cartOpen: !(this.state.cartOpen),
+        });
     };
     changeNavStyle = () => {
         if (this.state.width > 1024||this.state.burgerOpen){
@@ -58,21 +64,17 @@ export default class Header extends Component {
                 display:'inline-flex'
             }
         }
-        // if(this.state.burgerOpen){
-        //     return {
-        //         display:'inline-flex'
-        //     }
-        // }
         return {
             display:'none'
         }
     };
     render() {
+        let displayCart = this.state.cartOpen ?"block":"none";
         return (
             <header className="header">
-                <a href='#'>
+                <Link to={"/"}>
                     <img src={logo} alt="logo" className="header__logo-img"/>
-                </a>
+                </Link>
                 <nav>
                     <nav className={'header__nav'} style={this.changeNavStyle()}>
                         {Object.keys(this.state.navObj).map(key =>
@@ -100,9 +102,15 @@ export default class Header extends Component {
                         }/>
                     </div>
                     <div className="navigation__buttons">
-                        <Link to={"/UseCertificate"}>
-                        <img className={'cartIcon'} src={cartIcon} alt={"Cart"}/>
-                        </Link>
+                        <img className={'cartIcon'} src={cartIcon} alt={"Cart"} onClick={this.toggleCart}/>
+                        {this.state.cartOpen?
+                            <Cart
+                                products={this.props.products}
+                                order={this.props.order}
+                                addToOrder={this.props.addToOrder}
+                                deleteFromOrder={this.props.deleteFromOrder}
+                            />
+                            :null}
                     </div>
                 </div>
                 <Burger

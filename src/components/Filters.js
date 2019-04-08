@@ -3,6 +3,7 @@ import InputRange from 'react-input-range';
 import "../css/Filters.scss"
 import "../css/input-range/input-range.scss"
 import Categories from "./Categories";
+import SortProducts from "./SortProducts";
 
 class Filters extends Component {
 
@@ -18,7 +19,10 @@ class Filters extends Component {
                                 minValue={100}
                     />
                 </div>
-                <Categories/>
+                <SortProducts handleSortChange={this.props.handleSortChange}
+                              sortFilter={this.props.sortFilter}/>
+                <Categories handleCategoriesChange={this.props.handleCategoriesChange}
+                            categoriesFilter={this.props.categoriesFilter}/>
             </div>
         );
     }

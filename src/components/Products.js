@@ -5,6 +5,7 @@ import "../css/Products.scss"
 
 class Products extends Component {
 
+
     render() {
         return (
             <div className={"products"}>
@@ -12,8 +13,10 @@ class Products extends Component {
                     <Product
                     key={key}
                     id={key}
-                    product={this.props.products[key]}/>
-
+                    product={this.props.products[key]}
+                    priceFilter={this.props.priceFilter}
+                    categoriesFilter={this.props.categoriesFilter}
+                    addToOrder={this.props.addToOrder}/>
                 ))}
             </div>
         );

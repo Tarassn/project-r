@@ -4,32 +4,38 @@ import "../css/Categories.scss"
 class Categories extends Component {
     state={
         isOpen:false,
+
     };
-    toggle = () => {
+    toggleIsOpen = () => {
         let isOpen = !this.state.isOpen;
-        console.log(isOpen)
         this.setState({
             isOpen,
         })
     };
     render() {
+        let {active, water, sport, excursion,} = this.props.categoriesFilter;
         let openMenu = this.state.isOpen ? "block" : "none";
-        let checked = this.state.isOpen ? "true" : "";
+        let checked = this.state.isOpen ? true : "";
+        let handleInput= this.props.handleCategoriesChange;
         return (
-            <div className="categories" onClick={this.toggle}>
+            <div className="categories">
                 <input
                     className="categories-checkbox"
                     type="checkbox"
                     checked={checked}
-                /><label className="categories__category">Категории</label>
+                /><label onClick={this.toggleIsOpen} className="categories__category">Категории</label>
                 <ul className="categories__submenu" style={{display:openMenu}}>
-                    <li><input type="checkbox" value=""/><label className="categories__types"><span></span>Финансы</label>
+                    <li><input type="checkbox" checked={active}/><label className="categories__types">
+                        <span data-name='active' onClick={handleInput}></span>Активные</label>
                     </li>
-                    <li><input type="checkbox" value=""/><label className="categories__types"><span></span>Услуги</label>
+                    <li><input type="checkbox"  checked={water}/><label className="categories__types">
+                        <span data-name={'water'} onClick={handleInput}></span>Водные</label>
                     </li>
-                    <li><input type="checkbox" value=""/><label className="categories__types"><span></span>Ритейл</label>
+                    <li><input type="checkbox"  checked={sport}/><label className="categories__types">
+                        <span data-name={'sport'} onClick={handleInput}></span>Спорт</label>
                     </li>
-                    <li><input type="checkbox" value=""/><label className="categories__types"><span></span>Фармацевтика</label>
+                    <li><input type="checkbox"  checked={excursion}/><label className="categories__types">
+                        <span data-name={'excursion'} onClick={handleInput}></span>Экскурсии</label>
                     </li>
                 </ul>
             </div>

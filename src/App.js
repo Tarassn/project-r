@@ -12,7 +12,15 @@ class App extends Component {
         products:{},
         priceFilter:{
             value: { min: 250, max: 9000 },
-        }
+        },
+        sortFilter:{value: "recommended"},
+        categoriesFilter:{
+            active:true,
+            water:true,
+            sport:true,
+            excursion:true,
+        },
+        order:{},
     };
     componentDidMount(){
         this.loadProducts()
@@ -25,19 +33,53 @@ class App extends Component {
             value:priceRange
             }})
     };
+    handleSortChange = (event) => {
+        this.setState({sortFilter:{value: event.target.value}});
+    };
+    handleCategoriesChange = (event) => {
+        const target = event.target;
+        const name = target.getAttribute("data-name");
+        const categoriesFilter = {...this.state.categoriesFilter};
+        categoriesFilter[name] = !categoriesFilter[name];
+        this.setState({
+            categoriesFilter
+        });
+    };
+    addToOrder = (id) => {
+        const order = {...this.state.order};
+        order[id] = order[id] +1 || 1;
+        this.setState({ order });
+    };
+    deleteFromOrder = (id) => {
+        const order = {...this.state.order};
+        order[id] = order[id] -1 || 0;
+        this.setState({ order });
+    };
   render() {
     return (
       <div className="App">
-          <Header/>
+          <Header
+              products={this.state.products}
+              order={this.state.order}
+              addToOrder={this.addToOrder}
+              deleteFromOrder={this.deleteFromOrder}
+          />
           <main>
               <Slider/>
               <Filters
-              priceFilter={this.state.priceFilter}
-              priceFilterChange={this.priceFilterChange}/>
+                  priceFilter={this.state.priceFilter}
+                  sortFilter={this.state.sortFilter}
+                  categoriesFilter={this.state.categoriesFilter}
+                  priceFilterChange={this.priceFilterChange}
+                  handleSortChange={this.handleSortChange}
+                  handleCategoriesChange={this.handleCategoriesChange}/>
               <Products
-              products={this.state.products}/>
+                  priceFilter={this.state.priceFilter}
+                  sortFilter={this.state.sortFilter}
+                  categoriesFilter={this.state.categoriesFilter}
+                  products={this.state.products}
+                  addToOrder={this.addToOrder}/>
           </main>
-
       </div>
     );
   }
