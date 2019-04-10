@@ -32,7 +32,7 @@ export const navObj = {
             subItem3:'Идея',
         },
         image:bodo1,
-        link:"",
+        link:"#",
     },
     navItem3: {
         name:'Контакты',
@@ -50,12 +50,12 @@ export const navObj = {
             subItem5:'Стратегия',
         },
         image:bodo2,
-        link:"",
+        link:"#",
     },
     navItem5: {
         name:'Использовать сертификат',
         subItems:{},
-        link:"",
+        link:"/UseCertificate",
     },
 };
 

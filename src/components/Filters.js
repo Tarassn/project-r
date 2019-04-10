@@ -15,7 +15,7 @@ class Filters extends Component {
                 <div className="filters__price">
                     <InputRange value={this.props.priceFilter.value}
                                 onChange={(value) => {this.props.priceFilterChange(value)}}
-                                maxValue={10000}
+                                maxValue={5000}
                                 minValue={100}
                     />
                 </div>

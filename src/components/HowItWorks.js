@@ -6,7 +6,10 @@ class HowItWorks extends Component {
     render() {
         return (
             <div>
-                HowItWorks
+                <h2>HowItWorks</h2>
+                <h2>HowItWorks</h2>
+                <h2>HowItWorks</h2>
+                <h2>HowItWorks</h2>
             </div>
         );
     }

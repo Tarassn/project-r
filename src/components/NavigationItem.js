@@ -1,17 +1,20 @@
 import React, { Component } from 'react';
+import {Link} from "react-router-dom";
 
 class NavigationItem extends Component {
     render() {
-        const {name, subItems, image} = this.props.itemDetails;
+        const {name, subItems, image,link} = this.props.itemDetails;
         const isFocused=(this.props.focused === name);
         return (
             <div>
-                <div
-                    className={(isFocused)?'navigation__buttons navigation-focused':'navigation__buttons'}
-                    data-name={name}
-                    onClick={this.props.clickHandler}>
-                    <span>{name}</span>
-                </div>
+                <Link to={link} style={{textDecoration:"none"}}>
+                    <div
+                        className={(isFocused)?'navigation__buttons navigation-focused':'navigation__buttons'}
+                        data-name={name}
+                        onClick={this.props.clickHandler}>
+                        <span>{name}</span>
+                    </div>
+                </Link>
                 <div className={(isFocused)?'navigation__submenu navigation__submenu-active':'navigation__submenu'}>
                     <div className={'navigation__submenu-block'}>
                     {

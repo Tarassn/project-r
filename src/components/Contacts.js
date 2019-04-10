@@ -8,11 +8,14 @@ class Contacts extends Component {
     render() {
         return (
             <div>
-                <Header/>
-                <main>
-                    
-                </main>
-                <Footer/>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
+                <h1>CONTACTS</h1>
             </div>
         );
     }

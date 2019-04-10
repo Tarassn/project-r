@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
 import './css/App.scss';
 import {products} from './data-file';
 import Header from "./components/Header";
@@ -6,13 +7,18 @@ import Slider from "./components/Slider";
 import Filters from "./components/Filters";
 import Products from "./components/Products";
 import Footer from "./components/Footer";
+import Main from "./components/Main";
+import Contacts from "./components/Contacts";
+import NotFound from "./components/NotFound";
+import HowItWorks from "./components/HowItWorks";
+import UseCertificate from "./components/UseCertificate";
 
 
 class App extends Component {
     state={
         products:{},
         priceFilter:{
-            value: { min: 250, max: 9000 },
+            value: { min: 250, max: 4000 },
         },
         sortFilter:{value: "recommended"},
         categoriesFilter:{
@@ -62,34 +68,37 @@ class App extends Component {
     };
   render() {
     return (
-      <div className="App">
-          <Header
-              products={this.state.products}
-              order={this.state.order}
-              addToOrder={this.addToOrder}
-              deleteFromOrder={this.deleteFromOrder}
-              clearOrder={this.clearOrder}
-          />
-          <main>
-              <Slider/>
-              <Filters
-                  priceFilter={this.state.priceFilter}
-                  sortFilter={this.state.sortFilter}
-                  categoriesFilter={this.state.categoriesFilter}
-                  priceFilterChange={this.priceFilterChange}
-                  handleSortChange={this.handleSortChange}
-                  handleCategoriesChange={this.handleCategoriesChange}/>
-              <Products
-                  priceFilter={this.state.priceFilter}
-                  sortFilter={this.state.sortFilter}
-                  categoriesFilter={this.state.categoriesFilter}
+        <Router>
+          <div className="App">
+              <Header
                   products={this.state.products}
                   order={this.state.order}
                   addToOrder={this.addToOrder}
-                  />
-          </main>
-          <Footer/>
-      </div>
+                  deleteFromOrder={this.deleteFromOrder}
+                  clearOrder={this.clearOrder}
+              />
+              <main>
+                  <Switch>
+                      <Route exact path="/" component={()=>
+                          <Main priceFilter={this.state.priceFilter}
+                                sortFilter={this.state.sortFilter}
+                                categoriesFilter={this.state.categoriesFilter}
+                                priceFilterChange={this.priceFilterChange}
+                                handleSortChange={this.handleSortChange}
+                                handleCategoriesChange={this.handleCategoriesChange}
+                                products={this.state.products}
+                                order={this.state.order}
+                                addToOrder={this.addToOrder}
+                      />} />
+                      <Route path="/Contacts" component={Contacts} />
+                      <Route path="/HowItWorks" component={HowItWorks} />
+                      <Route path="/UseCertificate" component={UseCertificate} />
+                      <Route component={NotFound} />
+                  </Switch>
+              </main>
+              <Footer/>
+          </div>
+        </Router>
     );
   }
 }
