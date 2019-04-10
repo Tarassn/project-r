@@ -1,55 +1,74 @@
 import React, { Component } from 'react';
 import '../css/Slider.scss';
 import {sliderItems} from '../data-file';
+import SliderDot from "../components/SliderDot"
 
 export default class Slider extends Component {
         state = {
-            key:'0',
-            images: '',
+            key:0,
+            sliderItems: {},
         };
 
-    setImage = (images) => {
-        this.setState({
-            images:images,
-        });
-    };
-    changeKey = () => {
-        let imageCount = Object.keys(this.state.images).length;
+    changeKey = (difference) => {
+        let imageCount = Object.keys(this.state.sliderItems).length;
         let key = this.state.key;
-        key++;
+        key = key + difference ;
         if (key >= imageCount){
-            key='0';
+            key=0;
         }
+        if (key < 0){
+            key=imageCount -1;
+        }
+        clearInterval(this.sliderInterval);
+        this.timer();
         this.setState({key})
     };
     timer = () => {
-        setInterval(this.changeKey, 4000)
+        this.sliderInterval = setInterval(()=>{this.changeKey(+1)}, 4000)
+    };
+    changeKeyOnDot = (key) => {
+        clearInterval(this.sliderInterval);
+        this.timer();
+        this.setState({
+            key:+key
+        })
     };
 
 
     componentDidMount(){
-        const images=sliderItems;
-        if (this.state.images === '') {
-            this.setImage(images);
-        }
         this.timer();
+        this.setState({
+            sliderItems:sliderItems,
+        });
     }
-
-    componentWillUnmount(){
-
+    componentWillUnmount() {
+        clearInterval(this.sliderInterval);
     }
-// {backgroundImage: "url(" + this.state.images[imageKey]+ ")"}
 
     render(){
         const imageKey=this.state.key;
         return (
             <div className="slider">
+                <div className="slider-arrows slider-arrows_left" onClick={()=>{this.changeKey(-1)}}>{'<'}</div>
                 <section className="slider__text-block">
                     <span>DOBO'S PHILOSOPHY</span>
                     <h2>YOUR FEELINGS IS OUR DRIVING FORCES</h2>
                     <p>bla bla bla bla bla</p>
                 </section>
-                <img src={this.state.images[imageKey]}/>
+                <div className="slider-dots">
+                    {(this.state.sliderItems[imageKey])?
+                        Object.keys(this.state.sliderItems).map(key=>(
+                        <SliderDot
+                            key={key}
+                            id={key}
+                            sliderItem={this.state.sliderItems[key]}
+                            focused={this.state.key==key}
+                            changeKeyOnDot={this.changeKeyOnDot}/>
+                    ))
+                        :null}
+                </div>
+                <img src={(this.state.sliderItems[imageKey])?this.state.sliderItems[imageKey].image: null}/>
+                <div className="slider-arrows slider-arrows_right" onClick={()=>{this.changeKey(+1)}}>{'>'}</div>
             </div>
 
         );

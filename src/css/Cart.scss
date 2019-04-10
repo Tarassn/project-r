@@ -2,10 +2,42 @@
 .Cart{
   width: 600px;
   height: 300px;
+  overflow: scroll;
   position: fixed;
   border-radius: 3px;
   top:30%;
   left: 30%;
   background-color: $color-pink;
-
+  padding: 10px;
+}
+.cart_close-icon{
+  position: absolute;
+  right: 15px;
+  top:15px;
+  width: 20px;
+}
+.CartItem{
+  position: relative;
+}
+.cartIcon-container{}
+@media screen and (max-width: 1024px) {
+  .Cart{
+    width: 500px;
+    top:30%;
+    left: 25%;
+  }
+}
+@media screen and (max-width: 768px) {
+  .Cart{
+    width: 400px;
+    top:30%;
+    left: 20%;
+  }
+}
+@media screen and (max-width: 512px) {
+  .Cart{
+    width: 300px;
+    top:30%;
+    left: 10%;
+  }
 }

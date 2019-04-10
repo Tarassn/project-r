@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import CartItem from "./CartItem";
 import "../css/Cart.scss";
+import closeIcon from "../css/images/close-button.svg";
 
 
 
@@ -17,10 +18,12 @@ class Cart extends Component {
         return total
     };
     render() {
+        console.log(this.props.toggleCart)
 
         return (
             <div className={'Cart'}>
-                <div className={'row'}>
+                <div>
+                    {Object.keys(this.props.order).length<=0?"Корзина пуста":null}
                     {Object.keys(this.props.order).map((key) => (
                         <CartItem
                             product={this.props.products[key]}
@@ -33,12 +36,13 @@ class Cart extends Component {
                     ))
                     }
                 </div>
-                <span>Total:${this.totalSum()}</span>
+                <span>Всего:{this.totalSum()}₴</span>
                 <button
                     className={'btn btn-success'}
-                    // onClick={this.props.checkoutOrder}
+                    onClick={this.props.clearOrder}
                     disabled={(Object.keys(this.props.order).length < 1)}
-                >Checkout</button>
+                >Очистить</button>
+                <img className="cart_close-icon" src={closeIcon} onClick={this.props.toggleCart}/>
             </div>
         );
     }

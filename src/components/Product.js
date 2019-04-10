@@ -20,7 +20,10 @@ class Product extends Component {
         let {min, max} = this.props.priceFilter.value;
         let isCategoriesFit = (this.categoriesCompare(categories));
         let isPriceFit =  (min < price && price < max);
+        let isBtnActive = (this.props.order[this.props.id] > 0);
         let display = isPriceFit && isCategoriesFit ?"block":"none";
+        let btnActiveStyle= {backgroundColor: "#ed4457",
+                       boxShadow: "0 15px 40px 0 rgba(196, 67, 81, 0.6)"};
         return (
             <section className="product" style={{display:display}}>
                 <img src={image} alt={title}/>
@@ -33,7 +36,10 @@ class Product extends Component {
                     <span>{participants}чел.</span>
                     <span>{quantity}</span>
                 </div>
-                <button className="product__desc_btn" onClick={()=>{this.props.addToOrder(this.props.id)}}>Подарить</button>
+                <button className="product__desc_btn"
+                        onClick={()=>{this.props.addToOrder(this.props.id)}}
+                        style={isBtnActive ? btnActiveStyle : null}
+                >{isBtnActive ? `В корзине ${this.props.order[this.props.id]} +` : "Подарить"}</button>
             </section>
         );
     }

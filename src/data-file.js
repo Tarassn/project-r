@@ -22,6 +22,7 @@ export const navObj = {
         name:'Каталог впечатлений',
         subItems:{
         },
+        link:"/",
     },
     navItem2: {
         name:'О нас',
@@ -31,11 +32,13 @@ export const navObj = {
             subItem3:'Идея',
         },
         image:bodo1,
+        link:"",
     },
     navItem3: {
         name:'Контакты',
         subItems:{
             },
+        link:"/Contacts",
     },
     navItem4: {
         name:'Как это работает',
@@ -47,14 +50,32 @@ export const navObj = {
             subItem5:'Стратегия',
         },
         image:bodo2,
+        link:"",
     },
     navItem5: {
         name:'Использовать сертификат',
         subItems:{},
+        link:"",
     },
 };
 
-export const sliderItems = [slider1,slider2,slider3];
+export const sliderItems = {
+    "0":{
+        image:slider1,
+        text:"bla",
+        link:"",
+    },
+    "1":{
+        image:slider2,
+        text:"bla",
+        link:"",
+    },
+    "2":{
+        image:slider3,
+        text:"bla",
+        link:"",
+    },
+};
 let categories = ['active','water', 'sport','excursion']
 
 

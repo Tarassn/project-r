@@ -101,17 +101,19 @@ export default class Header extends Component {
                             paddingLeft:"28px"}
                         }/>
                     </div>
-                    <div className="navigation__buttons">
-                        <img className={'cartIcon'} src={cartIcon} alt={"Cart"} onClick={this.toggleCart}/>
-                        {this.state.cartOpen?
-                            <Cart
-                                products={this.props.products}
-                                order={this.props.order}
-                                addToOrder={this.props.addToOrder}
-                                deleteFromOrder={this.props.deleteFromOrder}
-                            />
-                            :null}
-                    </div>
+                </div>
+                <div className="navigation__buttons cartIcon-container">
+                    <img className={'cartIcon'} src={cartIcon} alt={"Cart"} onClick={this.toggleCart}/>
+                    {this.state.cartOpen?
+                        <Cart
+                            products={this.props.products}
+                            order={this.props.order}
+                            addToOrder={this.props.addToOrder}
+                            deleteFromOrder={this.props.deleteFromOrder}
+                            clearOrder={this.props.clearOrder}
+                            toggleCart={this.toggleCart}
+                        />
+                        :null}
                 </div>
                 <Burger
                     burgerOpen={this.state.burgerOpen}

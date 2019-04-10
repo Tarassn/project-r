@@ -16,7 +16,9 @@ class Products extends Component {
                     product={this.props.products[key]}
                     priceFilter={this.props.priceFilter}
                     categoriesFilter={this.props.categoriesFilter}
-                    addToOrder={this.props.addToOrder}/>
+                    order={this.props.order}
+                    addToOrder={this.props.addToOrder}
+                    />
                 ))}
             </div>
         );

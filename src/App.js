@@ -5,6 +5,7 @@ import Header from "./components/Header";
 import Slider from "./components/Slider";
 import Filters from "./components/Filters";
 import Products from "./components/Products";
+import Footer from "./components/Footer";
 
 
 class App extends Component {
@@ -55,6 +56,10 @@ class App extends Component {
         order[id] = order[id] -1 || 0;
         this.setState({ order });
     };
+    clearOrder = () => {
+        const order = {...this.state.order};
+        this.setState({ order:{}});
+    };
   render() {
     return (
       <div className="App">
@@ -63,6 +68,7 @@ class App extends Component {
               order={this.state.order}
               addToOrder={this.addToOrder}
               deleteFromOrder={this.deleteFromOrder}
+              clearOrder={this.clearOrder}
           />
           <main>
               <Slider/>
@@ -78,8 +84,11 @@ class App extends Component {
                   sortFilter={this.state.sortFilter}
                   categoriesFilter={this.state.categoriesFilter}
                   products={this.state.products}
-                  addToOrder={this.addToOrder}/>
+                  order={this.state.order}
+                  addToOrder={this.addToOrder}
+                  />
           </main>
+          <Footer/>
       </div>
     );
   }
