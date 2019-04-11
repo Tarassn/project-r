@@ -132,6 +132,20 @@
 .cartIcon-container{
   width: 30px;
 }
+.cartIcon-total{
+  position: absolute;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 90%;
+  right: -20px;
+  top:20px;
+  width: 16px;
+  height: 16px;
+  background-color: $color-red;
+  color: $color-white;
+  border-radius: 50%;
+}
 .header__burger{
   display: none;
   width: 30px;

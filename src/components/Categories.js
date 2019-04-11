@@ -23,18 +23,19 @@ class Categories extends Component {
                     className="categories-checkbox"
                     type="checkbox"
                     checked={checked}
+                    onChange={null}
                 /><label onClick={this.toggleIsOpen} className="categories__category">Категории</label>
                 <ul className="categories__submenu" style={{display:openMenu}}>
-                    <li><input type="checkbox" checked={active}/><label className="categories__types">
+                    <li><input type="checkbox" defaultChecked={active}/><label className="categories__types">
                         <span data-name='active' onClick={handleInput}></span>Активные</label>
                     </li>
-                    <li><input type="checkbox"  checked={water}/><label className="categories__types">
+                    <li><input type="checkbox"  defaultChecked={water}/><label className="categories__types">
                         <span data-name={'water'} onClick={handleInput}></span>Водные</label>
                     </li>
-                    <li><input type="checkbox"  checked={sport}/><label className="categories__types">
+                    <li><input type="checkbox"  defaultChecked={sport}/><label className="categories__types">
                         <span data-name={'sport'} onClick={handleInput}></span>Спорт</label>
                     </li>
-                    <li><input type="checkbox"  checked={excursion}/><label className="categories__types">
+                    <li><input type="checkbox"  defaultChecked={excursion}/><label className="categories__types">
                         <span data-name={'excursion'} onClick={handleInput}></span>Экскурсии</label>
                     </li>
                 </ul>

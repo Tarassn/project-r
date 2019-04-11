@@ -37,12 +37,16 @@ class Cart extends Component {
                     }
                 </div>
                 <span>Всего:{this.totalSum()}₴</span>
+
                 <button
                     className={'btn btn-success'}
                     onClick={this.props.clearOrder}
                     disabled={(Object.keys(this.props.order).length < 1)}
                 >Очистить</button>
-                <img className="cart_close-icon" src={closeIcon} onClick={this.props.toggleCart}/>
+                <div>
+                    <img className="cart_close-icon" alt="cart icon" src={closeIcon} onClick={this.props.toggleCart}/>
+                </div>
+
             </div>
         );
     }

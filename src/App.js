@@ -66,6 +66,7 @@ class App extends Component {
         const order = {...this.state.order};
         this.setState({ order:{}});
     };
+
   render() {
     return (
         <Router>

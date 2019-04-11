@@ -10,9 +10,9 @@ class SortProducts extends Component {
                 <label>
                     Сортировать:
                     <select value={this.props.sortFilter.value} onChange={event => this.props.handleSortChange(event)}>
-                        <option value="recommended">Рекомендуемые</option>
-                        <option value="lowToHigh">От дешевых к дорогим</option>
-                        <option value="highToLow">От дорогих к дешевым</option>
+                        <option value="0">Рекомендуемые</option>
+                        <option value="1">От дешевых к дорогим</option>
+                        <option value="-1">От дорогих к дешевым</option>
                     </select>
                 </label>
             </div>

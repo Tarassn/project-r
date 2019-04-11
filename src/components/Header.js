@@ -12,7 +12,7 @@ import Cart from "./Cart";
 export default class Header extends Component {
         state = {
             navObj: navObj,
-            focused:'',
+            focused:"Каталог впечатлений",
             burgerOpen:false,
             navOpen:false,
             width: 0,
@@ -57,6 +57,14 @@ export default class Header extends Component {
         this.setState({
             cartOpen: !(this.state.cartOpen),
         });
+    };
+
+    totalItems = () =>{
+        let total = Object.keys(this.props.order).reduce((previousValue, key) =>{
+            const count = this.props.order[key];
+            return previousValue + count;
+        },0);
+        return total
     };
     changeNavStyle = () => {
         if (this.state.width > 1024||this.state.burgerOpen){
@@ -103,7 +111,8 @@ export default class Header extends Component {
                     </div>
                 </div>
                 <div className="navigation__buttons cartIcon-container">
-                    <img className={'cartIcon'} src={cartIcon} alt={"Cart"} onClick={this.toggleCart}/>
+                    <img className='cartIcon' src={cartIcon} alt="Cart" onClick={this.toggleCart}/>
+                    <div className="cartIcon-total">{this.totalItems()}</div>
                     {this.state.cartOpen?
                         <Cart
                             products={this.props.products}
