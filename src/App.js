@@ -1,11 +1,8 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Link, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
 import './css/App.scss';
 import {products} from './data-file';
 import Header from "./components/Header";
-import Slider from "./components/Slider";
-import Filters from "./components/Filters";
-import Products from "./components/Products";
 import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Contacts from "./components/Contacts";
@@ -63,7 +60,6 @@ class App extends Component {
         this.setState({ order });
     };
     clearOrder = () => {
-        const order = {...this.state.order};
         this.setState({ order:{}});
     };
 

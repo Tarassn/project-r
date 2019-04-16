@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import "../css/Footer.scss";
-import {navObj as navObj} from '../data-file';
+import {navObj} from '../data-file';
 import logo from "../css/images/logo.png";
 import FooterItem from "./FooterItem";
 

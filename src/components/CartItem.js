@@ -20,7 +20,7 @@ class CartItem extends Component {
                     <br/>
                     <button onClick={this.handleClickAdd}>+1</button>
                     <button onClick={this.handleClickDelete} disabled={(this.props.order<=0)}>-1</button>
-                    <img src={image} style={{width:"80px", position:"absolute", right:"40px", top:"-5px"}}/>
+                    <img src={image} alt={title} style={{width:"80px", position:"absolute", right:"40px", top:"-5px"}}/>
                     <br/>
                     <hr/>
                 </div>

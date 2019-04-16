@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import Product from "./Product";
 import "../css/Products.scss"
 import {toArray} from "../utils";
-import {toDict} from "../utils";
 
 
 class Products extends Component {

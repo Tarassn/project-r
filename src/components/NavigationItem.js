@@ -24,7 +24,7 @@ class NavigationItem extends Component {
                     ))}
                     </div>
                     <div className={'navigation__submenu_image-container'}>
-                    {(image)?<img src={image}/> : null}
+                    {(image)?<img src={image} alt={name}/> : null}
                     </div>
                 </div>
             </div>

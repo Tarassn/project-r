@@ -19,6 +19,9 @@
     top: -20px;
   }
 }
+.slider-container{
+  background-color: $color-red;
+}
 .slider__text-block{
   z-index: 1;
   padding: 30px 5%;
@@ -94,6 +97,25 @@
     cursor: pointer;
   }
 }
+//slider CSStransition
+
+.background-enter {
+  transform: translate(100%);
+}
+.background-enter.background-enter-active {
+  transform: translate(0%);
+  transition: transform 600ms ease-in-out;
+}
+.background-leave {
+  //transform: translate(0%);
+  display: none;
+}
+.background-leave.background-leave-active {
+  display: none;
+  //transform: translate(-100%);
+  //transition: transform 600ms ease-in-out;
+}
+
 @media screen and (max-width: 1024px) {
   .slider__text-block{
     box-sizing: border-box;

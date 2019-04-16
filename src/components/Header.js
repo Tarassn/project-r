@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import {navObj as navObj} from '../data-file';
+import {navObj} from '../data-file';
 import logo from "../css/images/logo.png";
 import searchIcon from "../css/images/searchIcon.svg";
 import cartIcon from "../css/images/shopping-cart-of-checkered-design.png";
@@ -77,7 +77,7 @@ export default class Header extends Component {
         }
     };
     render() {
-        let displayCart = this.state.cartOpen ?"block":"none";
+
         return (
             <header className="header">
                 <Link to={"/"}>
@@ -98,7 +98,7 @@ export default class Header extends Component {
                 </nav>
                 <div className="header__right-block">
                     <div className="navigation__buttons">
-                        <input type="text" style={
+                        <input type="text" className="navigation__search" style={
                             {backgroundImage:`url(${searchIcon})`,
                             backgroundPosition:"5% 50%",
                             outline:"none",
@@ -112,7 +112,7 @@ export default class Header extends Component {
                 </div>
                 <div className="navigation__buttons cartIcon-container">
                     <img className='cartIcon' src={cartIcon} alt="Cart" onClick={this.toggleCart}/>
-                    <div className="cartIcon-total">{this.totalItems()}</div>
+                    <div className="cartIcon-total" onClick={this.toggleCart}>{this.totalItems()}</div>
                     {this.state.cartOpen?
                         <Cart
                             products={this.props.products}

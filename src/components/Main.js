@@ -4,11 +4,13 @@ import Filters from "../components/Filters";
 import Products from "../components/Products";
 
 
+
 class Main extends Component {
 
     render() {
         return (
             <div className="Main">
+
                     <Slider/>
                     <Filters
                         priceFilter={this.props.priceFilter}

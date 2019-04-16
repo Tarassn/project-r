@@ -1,6 +1,4 @@
 import React, { Component } from 'react';
-import Header from "./Header";
-import Footer from "./Footer";
 import "../css/Contacts.scss"
 
 
@@ -35,7 +33,7 @@ class Contacts extends Component {
                 </div>
                 <iframe
                     src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2540.28188309576!2d30.519101350845173!3d50.45447539485591!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40d4ce4549e8af4b%3A0x3675e09632d0dcdc!2zMjRBLCDRg9C7LiDQnNC40YXQsNC50LvQvtCy0YHQutCw0Y8sIDI00JAsINCa0LjQtdCyLCAwMjAwMA!5e0!3m2!1sru!2sua!4v1554975487920!5m2!1sru!2sua"
-                    width="100%" height="500" frameBorder="0" allowFullScreen></iframe>
+                    width="100%" title="google-maps" height="500" frameBorder="0" allowFullScreen></iframe>
 
             </div>
         );

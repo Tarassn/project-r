@@ -17,6 +17,10 @@ class Cart extends Component {
         },0);
         return total
     };
+    purchaseProducts = () => {
+        alert(JSON.stringify(this.props.order));
+        this.props.clearOrder();
+    }
     render() {
         console.log(this.props.toggleCart)
 
@@ -37,9 +41,13 @@ class Cart extends Component {
                     }
                 </div>
                 <span>Всего:{this.totalSum()}₴</span>
-
                 <button
-                    className={'btn btn-success'}
+                    className={''}
+                    onClick={this.purchaseProducts}
+                    disabled={(Object.keys(this.props.order).length < 1)}
+                >Приобрести</button>
+                <button
+                    className={''}
                     onClick={this.props.clearOrder}
                     disabled={(Object.keys(this.props.order).length < 1)}
                 >Очистить</button>

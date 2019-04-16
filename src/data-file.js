@@ -1,6 +1,6 @@
 // This is just some sample data!
-import bodo1 from './css/images/bodo1.jpg';
-import bodo2 from './css/images/bodo2.jpg';
+import dobo1 from './css/images/bodo1.jpg';
+import dobo2 from './css/images/bodo2.jpg';
 import slider1 from './css/images/slider1.jpg';
 import slider2 from './css/images/slider2.jpg';
 import slider3 from './css/images/slider3.jpg';
@@ -31,7 +31,7 @@ export const navObj = {
             subItem2:'Люди',
             subItem3:'Идея',
         },
-        image:bodo1,
+        image:dobo1,
         link:"#",
     },
     navItem3: {
@@ -49,7 +49,7 @@ export const navObj = {
             subItem4:'Покупка подарка',
             subItem5:'Стратегия',
         },
-        image:bodo2,
+        image:dobo2,
         link:"#",
     },
     navItem5: {
@@ -62,27 +62,27 @@ export const navObj = {
 export const sliderItems = {
     "0":{
         image:slider1,
-        text:"bla",
+        text:"Дарите яркие эмоции!",
         link:"",
     },
     "1":{
         image:slider2,
-        text:"bla",
+        text:"Создавайте незабываемые воспоминания!",
         link:"",
     },
     "2":{
         image:slider3,
-        text:"bla",
+        text:"Dobo — профессионал в сфере развлечений",
         link:"",
     },
 };
-let categories = ['active','water', 'sport','excursion']
+// let categories = ['active','water', 'sport','excursion']
 
 
 export const  products = {
     "0": {
         title: 'Мастер-класс дайвинга для двоих',
-        id:"12",
+        id:"0",
         text: "Занятие по погружению под воду с аквалангом. Друзья узнают, как использовать язык жестов и действовать" +
         " в непредвиденных ситуациях. Во время практики дайверы будут отрабатывать технику плавания на глубине.",
         image: product12,

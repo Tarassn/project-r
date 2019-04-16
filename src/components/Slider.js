@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import '../css/Slider.scss';
+import { CSSTransitionGroup } from 'react-transition-group'
 import {sliderItems} from '../data-file';
 import SliderDot from "../components/SliderDot"
 
@@ -48,11 +49,16 @@ export default class Slider extends Component {
     render(){
         const imageKey=this.state.key;
         return (
-            <div className="slider">
+            <div className="slider-container">
+            <CSSTransitionGroup
+                transitionName="background"
+                transitionEnterTimeout={600}
+                transitionLeaveTimeout={600}>
+            <div className="slider" key={imageKey}>
                 <div className="slider-arrows slider-arrows_left" onClick={()=>{this.changeKey(-1)}}>{'<'}</div>
                 <section className="slider__text-block">
                     <span>DOBO'S PHILOSOPHY</span>
-                    <h2>YOUR FEELINGS IS OUR DRIVING FORCES</h2>
+                    <h2>{(this.state.sliderItems[imageKey])?this.state.sliderItems[imageKey].text: null}</h2>
                     <p>bla bla bla bla bla</p>
                 </section>
                 <div className="slider-dots">
@@ -62,13 +68,15 @@ export default class Slider extends Component {
                             key={key}
                             id={key}
                             sliderItem={this.state.sliderItems[key]}
-                            focused={this.state.key==key}
+                            focused={this.state.key===+key}
                             changeKeyOnDot={this.changeKeyOnDot}/>
                     ))
                         :null}
                 </div>
-                <img src={(this.state.sliderItems[imageKey])?this.state.sliderItems[imageKey].image: null}/>
+                <img alt='' src={(this.state.sliderItems[imageKey])?this.state.sliderItems[imageKey].image: null}/>
                 <div className="slider-arrows slider-arrows_right" onClick={()=>{this.changeKey(+1)}}>{'>'}</div>
+            </div>
+            </CSSTransitionGroup>
             </div>
 
         );
