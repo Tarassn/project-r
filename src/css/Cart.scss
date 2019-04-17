@@ -19,6 +19,53 @@
 .CartItem{
   position: relative;
 }
+.Cart__btn{
+  width: 48%;
+  max-width: 300px;
+  font-weight: 800;
+  font-size: 110%;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  padding: 13px 5px;
+  background-color: $color-green;
+  transition: background-color 0.2s;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 15px 30px 0 rgba(82, 141, 98, 0.6);
+  cursor: pointer;
+  margin:5px;
+}
+.Cart__btn:disabled{
+  opacity: 0.5;
+}
+.Cart__btn:disabled:hover{
+  background-color: $color-green;
+}
+.Cart__btn:hover{
+  background-color: $color-dark-green
+}
+.Cart__small-btn{
+  width: 36px;
+  font-weight: 800;
+  font-size: 110%;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  color: #fff;
+  padding: 8px 4px;
+  background-color: $color-green;
+  transition: background-color 0.2s;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 15px 30px 0 rgba(82, 141, 98, 0.6);
+  cursor: pointer;
+  margin:5px;
+}
+.Cart__small-btn:hover{
+  background-color: $color-dark-green
+}
 .cartIcon-container{}
 @media screen and (max-width: 1024px) {
   .Cart{

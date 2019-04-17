@@ -43,6 +43,7 @@ class UseCertificateForm extends Component {
             if(errors[key].hideStatus===false){
                 formValidated = false;
             }
+            return null
         });
         if(formValidated) {
             alert(JSON.stringify(this.state.inputs));
@@ -54,6 +55,7 @@ class UseCertificateForm extends Component {
         Object.keys(errors).map((key) =>{
             this.validateText(key);
             this.validateAgree(key);
+            return null
         })
     };
     validateText = (key) => {
@@ -112,7 +114,7 @@ class UseCertificateForm extends Component {
                     <div className="text-center">
                         <button
                             type="submit"
-                            className=""
+                            className="UseCertificate__btn"
                         >Активировать</button>
                     </div>
                 </form>

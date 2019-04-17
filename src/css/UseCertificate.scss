@@ -51,6 +51,7 @@
     border-radius: 3px;
     outline: none;
     font-size: 100%;
+    margin: 10px 0;
   }
   label{
     color: $color-red;
@@ -67,6 +68,27 @@
   .UseCertificate__good-to-know_item{
     width: 30%;
   }
+}
+.UseCertificate__btn{
+  width: 50%;
+  max-width: 300px;
+  font-weight: 800;
+  font-size: 110%;
+  outline: none;
+  border: 0;
+  border-radius: 3px;
+  float: right;
+  color: #fff;
+  padding: 13px 5px;
+  background-color: $color-green;
+  transition: background-color 0.2s;
+  position: relative;
+  z-index: 1;
+  box-shadow: 0 15px 30px 0 rgba(82, 141, 98, 0.6);
+  cursor: pointer;
+}
+.UseCertificate__btn:hover{
+  background-color: $color-dark-green
 }
 @media screen and (max-width: 1256px){
   .UseCertificate__boxes{

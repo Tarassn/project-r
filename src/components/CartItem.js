@@ -18,8 +18,8 @@ class CartItem extends Component {
                 <div className={'CartItem'}>
                     {`${title} -  ${price}₴ x ${(this.props.order)?this.props.order:0}`}
                     <br/>
-                    <button onClick={this.handleClickAdd}>+1</button>
-                    <button onClick={this.handleClickDelete} disabled={(this.props.order<=0)}>-1</button>
+                    <button onClick={this.handleClickAdd} className="Cart__small-btn">+1</button>
+                    <button onClick={this.handleClickDelete} disabled={(this.props.order<=0)} className="Cart__small-btn">-1</button>
                     <img src={image} alt={title} style={{width:"80px", position:"absolute", right:"40px", top:"-5px"}}/>
                     <br/>
                     <hr/>

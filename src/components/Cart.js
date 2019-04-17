@@ -40,14 +40,14 @@ class Cart extends Component {
                     ))
                     }
                 </div>
-                <span>Всего:{this.totalSum()}₴</span>
+                <span>Всего:{this.totalSum()}₴</span><br/>
                 <button
-                    className={''}
+                    className="Cart__btn"
                     onClick={this.purchaseProducts}
                     disabled={(Object.keys(this.props.order).length < 1)}
                 >Приобрести</button>
                 <button
-                    className={''}
+                    className="Cart__btn"
                     onClick={this.props.clearOrder}
                     disabled={(Object.keys(this.props.order).length < 1)}
                 >Очистить</button>

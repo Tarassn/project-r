@@ -10,7 +10,6 @@ class Main extends Component {
     render() {
         return (
             <div className="Main">
-
                     <Slider/>
                     <Filters
                         priceFilter={this.props.priceFilter}

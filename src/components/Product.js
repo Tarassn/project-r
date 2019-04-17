@@ -11,6 +11,7 @@ class Product extends Component {
                     return match;
                 }
             }
+            return null;
         });
         return match;
     };
