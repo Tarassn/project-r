@@ -6,12 +6,13 @@ class Categories extends Component {
         isOpen:false,
 
     };
-    toggleIsOpen = () => {
+    toggleIsOpen = (event) => {
         let isOpen = !this.state.isOpen;
         this.setState({
             isOpen,
-        })
+        });
     };
+
     render() {
         let {active, water, sport, excursion,} = this.props.categoriesFilter;
         let openMenu = this.state.isOpen ? "block" : "none";

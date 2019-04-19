@@ -12,7 +12,6 @@ import Cart from "./Cart";
 export default class Header extends Component {
         state = {
             navObj: navObj,
-            focused:"Каталог впечатлений",
             burgerOpen:false,
             navOpen:false,
             width: 0,
@@ -33,19 +32,6 @@ export default class Header extends Component {
     componentDidUpdate(){
 
     }
-
-    clickHandler = (e) => {
-        if(e.currentTarget.classList.contains('navigation-focused')){
-            this.setState({
-                focused:'',
-            });
-        }
-        else {
-            this.setState({
-                focused: e.currentTarget.dataset.name,
-            })
-        }
-    };
 
     toggleBurger = (e) => {
         this.setState({
@@ -80,7 +66,7 @@ export default class Header extends Component {
 
         return (
             <header className="header">
-                <Link to={"/"}>
+                <Link >
                     <img src={logo} alt="logo" className="header__logo-img"/>
                 </Link>
                 <nav>
@@ -90,8 +76,8 @@ export default class Header extends Component {
                                 key = {key}
                                 index = {key}
                                 itemDetails={this.state.navObj[key]}
-                                clickHandler={this.clickHandler}
-                                focused={this.state.focused}
+                                focusedPageHandler={this.props.focusedPageHandler}
+                                focused={this.props.focusedPage}
                             />
                         )}
                     </nav>

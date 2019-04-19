@@ -4,14 +4,16 @@ import {Link} from "react-router-dom";
 class NavigationItem extends Component {
     render() {
         const {name, subItems, image,link} = this.props.itemDetails;
-        const isFocused=(this.props.focused === name);
+        const isFocused =(this.props.focused === name);
+        const couldBeOpen = (Object.keys(subItems).length > 0);
+        const className = `${(isFocused)?'navigation__buttons navigation-focused':'navigation__buttons'} ${(couldBeOpen)?"navigation-could-open":''}`;
         return (
             <div>
                 <Link to={link} style={{textDecoration:"none"}}>
                     <div
-                        className={(isFocused)?'navigation__buttons navigation-focused':'navigation__buttons'}
+                        className={className}
                         data-name={name}
-                        onClick={this.props.clickHandler}>
+                        onClick={this.props.focusedPageHandler}>
                         <span>{name}</span>
                     </div>
                 </Link>

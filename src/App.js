@@ -25,6 +25,7 @@ class App extends Component {
             excursion:true,
         },
         order:{},
+        focusedPage: "Каталог впечатлений",
     };
     componentDidMount(){
         this.loadProducts()
@@ -48,6 +49,7 @@ class App extends Component {
         this.setState({
             categoriesFilter
         });
+
     };
     addToOrder = (id) => {
         const order = {...this.state.order};
@@ -62,8 +64,22 @@ class App extends Component {
     clearOrder = () => {
         this.setState({ order:{}});
     };
+    focusedPageHandler = (e) => {
+        let target= e.currentTarget;
+        if(target.classList.contains('navigation-focused')&&target.classList.contains('navigation-could-open')){
+            this.setState({
+                focusedPage:'',
+            });
+        }
+        else {
+            this.setState({
+                focusedPage: target.dataset.name,
+            })
+        }
+    };
 
-  render() {
+
+    render() {
     return (
         <Router>
           <div className="App">
@@ -73,6 +89,8 @@ class App extends Component {
                   addToOrder={this.addToOrder}
                   deleteFromOrder={this.deleteFromOrder}
                   clearOrder={this.clearOrder}
+                  focusedPage={this.state.focusedPage}
+                  focusedPageHandler={this.focusedPageHandler}
               />
               <main>
                   <Switch>

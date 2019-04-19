@@ -16,11 +16,12 @@ class CartItem extends Component {
             <div>
             {this.props.order>0?
                 <div className={'CartItem'}>
-                    {`${title} -  ${price}₴ x ${(this.props.order)?this.props.order:0}`}
-                    <br/>
+
+                    <p>{`${title} -  ${price}₴ x ${(this.props.order)?this.props.order:0}`}</p>
+
                     <button onClick={this.handleClickAdd} className="Cart__small-btn">+1</button>
                     <button onClick={this.handleClickDelete} disabled={(this.props.order<=0)} className="Cart__small-btn">-1</button>
-                    <img src={image} alt={title} style={{width:"80px", position:"absolute", right:"40px", top:"-5px"}}/>
+                    <img src={image} className="Cart__item-img" alt={title} />
                     <br/>
                     <hr/>
                 </div>

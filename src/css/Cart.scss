@@ -18,6 +18,17 @@
 }
 .CartItem{
   position: relative;
+  p{
+    width: 70%;
+    white-space: pre-line;
+
+  }
+}
+.Cart__item-img{
+  width:80px;
+  position:absolute;
+  right:40px;
+  top:-5px;
 }
 .Cart__btn{
   width: 48%;
@@ -35,7 +46,7 @@
   z-index: 1;
   box-shadow: 0 15px 30px 0 rgba(82, 141, 98, 0.6);
   cursor: pointer;
-  margin:5px;
+  margin:10px 5px;
 }
 .Cart__btn:disabled{
   opacity: 0.5;
@@ -79,6 +90,15 @@
     width: 400px;
     top:30%;
     left: 20%;
+  }
+  .CartItem{
+    p{
+      width: 60%;
+    }
+  }
+  .Cart__item-img{
+    width: 100px;
+    right: 35px;
   }
 }
 @media screen and (max-width: 512px) {
