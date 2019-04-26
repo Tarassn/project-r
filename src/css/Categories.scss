@@ -27,7 +27,8 @@
   cursor: pointer;
   user-select: none;
 }
-.categories-checkbox:checked + label{
+
+.categories-checkbox-checked + label{
   background-color: $color-pink;
 }
 .categories-checkbox:checked + label:after {

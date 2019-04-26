@@ -18,9 +18,8 @@ class Product extends Component {
 
     render() {
         let {image,title,text,price,categories,participants,quantity} = this.props.product;
-        let {min, max} = this.props.priceFilter.value;
         let isCategoriesFit = (this.categoriesCompare(categories));
-        let isPriceFit =  (min < price && price < max);
+        let isPriceFit =  this.props.isPriceFit;
         let isBtnActive = (this.props.order[this.props.id] > 0);
         let display = isPriceFit && isCategoriesFit ?"block":"none";
         let btnActiveStyle= {backgroundColor: "#ed4457",

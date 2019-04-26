@@ -94,6 +94,7 @@
   .UseCertificate__boxes{
     section{
       width: 240px;
+      font-size: 90%;
     }
   }
 }
@@ -102,7 +103,7 @@
     flex-direction: column;
     align-items: center;
     .UseCertificate__good-to-know_item{
-      width: 90%;
+      width: 95%;
     }
   }
   .UseCertificate__container{
@@ -111,6 +112,7 @@
   }
   .UseCertificate__boxes{
     width: 100%;
+    font-size: 105%;
     section{
       background-color: $color-pink;
       border-radius: 30px;

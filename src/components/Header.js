@@ -66,9 +66,7 @@ export default class Header extends Component {
 
         return (
             <header className="header">
-                <Link >
                     <img src={logo} alt="logo" className="header__logo-img"/>
-                </Link>
                 <nav>
                     <nav className={'header__nav'} style={this.changeNavStyle()}>
                         {Object.keys(this.state.navObj).map(key =>

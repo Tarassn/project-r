@@ -76,7 +76,7 @@ export const sliderItems = {
         link:"",
     },
 };
-// let categories = ['active','water', 'sport','excursion']
+export const categories = ['active','water', 'sport','excursion'];
 
 
 export const  products = {

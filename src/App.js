@@ -42,6 +42,7 @@ class App extends Component {
         this.setState({sortFilter:{value: event.target.value}});
     };
     handleCategoriesChange = (event) => {
+
         const target = event.target;
         const name = target.getAttribute("data-name");
         const categoriesFilter = {...this.state.categoriesFilter};
