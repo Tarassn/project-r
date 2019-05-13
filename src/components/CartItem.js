@@ -7,9 +7,11 @@ class CartItem extends Component {
         this.props.addToOrder(this.props.id);
         console.log(this.props.id)
     };
+
     handleClickDelete = () =>{
         this.props.deleteFromOrder(this.props.id)
     };
+
     render() {
         let {title,price, image} = this.props.product;
         return (

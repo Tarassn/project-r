@@ -6,6 +6,7 @@ class Categories extends Component {
         isOpen:false,
 
     };
+
     toggleIsOpen = (event) => {
         let isOpen = !this.state.isOpen;
         this.setState({

@@ -7,7 +7,6 @@ import Footer from "./components/Footer";
 import Main from "./components/Main";
 import Contacts from "./components/Contacts";
 import NotFound from "./components/NotFound";
-import HowItWorks from "./components/HowItWorks";
 import UseCertificate from "./components/UseCertificate";
 
 
@@ -27,22 +26,26 @@ class App extends Component {
         order:{},
         focusedPage: "Каталог впечатлений",
     };
+
     componentDidMount(){
         this.loadProducts()
     }
+
     loadProducts = () =>{
         this.setState({products:products})
     };
+
     priceFilterChange = (priceRange) => {
         this.setState({priceFilter:{
             value:priceRange
             }})
     };
+
     handleSortChange = (event) => {
         this.setState({sortFilter:{value: event.target.value}});
     };
-    handleCategoriesChange = (event) => {
 
+    handleCategoriesChange = (event) => {
         const target = event.target;
         const name = target.getAttribute("data-name");
         const categoriesFilter = {...this.state.categoriesFilter};
@@ -50,21 +53,24 @@ class App extends Component {
         this.setState({
             categoriesFilter
         });
-
     };
+
     addToOrder = (id) => {
         const order = {...this.state.order};
         order[id] = order[id] +1 || 1;
         this.setState({ order });
     };
+
     deleteFromOrder = (id) => {
         const order = {...this.state.order};
         order[id] = order[id] -1 || 0;
         this.setState({ order });
     };
+
     clearOrder = () => {
         this.setState({ order:{}});
     };
+
     focusedPageHandler = (e) => {
         let target= e.currentTarget;
         if(target.classList.contains('navigation-focused')&&target.classList.contains('navigation-could-open')){
@@ -78,7 +84,6 @@ class App extends Component {
             })
         }
     };
-
 
     render() {
     return (
@@ -107,7 +112,6 @@ class App extends Component {
                                 addToOrder={this.addToOrder}
                       />} />
                       <Route path="/Contacts" component={Contacts} />
-                      <Route path="/HowItWorks" component={HowItWorks} />
                       <Route path="/UseCertificate" component={UseCertificate} />
                       <Route component={NotFound} />
                   </Switch>

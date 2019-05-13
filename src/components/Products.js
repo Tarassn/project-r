@@ -5,7 +5,6 @@ import {toArray} from "../utils";
 
 
 class Products extends Component {
-
     ifShowEmptyMessage = (arr, min, max) => {
         let showEmptyMessage = [];
         arr.map((item) => {
@@ -17,6 +16,7 @@ class Products extends Component {
         );
         return !(showEmptyMessage.length > 0);
     };
+
     categoriesFilterEmpty = () => {
         let res = true;
         Object.keys(this.props.categoriesFilter).map(key => {

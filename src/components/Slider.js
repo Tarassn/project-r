@@ -24,9 +24,11 @@ export default class Slider extends Component {
         this.timer();
         this.setState({key})
     };
+
     timer = () => {
         this.sliderInterval = setInterval(()=>{this.changeKey(+1)}, 4000)
     };
+
     changeKeyOnDot = (key) => {
         clearInterval(this.sliderInterval);
         this.timer();
@@ -41,10 +43,11 @@ export default class Slider extends Component {
         this.setState({
             sliderItems:sliderItems,
         });
-    }
+    };
+
     componentWillUnmount() {
         clearInterval(this.sliderInterval);
-    }
+    };
 
     render(){
         const imageKey=this.state.key;

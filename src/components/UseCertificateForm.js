@@ -22,8 +22,6 @@ class UseCertificateForm extends Component {
             CertificateNumber: {message:"CertificateNumber must be filled",
                 hideStatus:true},
         },
-
-
     };
     handleInput = (e) => {
         const inputs = {...this.state.inputs};
@@ -35,6 +33,7 @@ class UseCertificateForm extends Component {
             inputs
         });
     };
+
     handleSubmit = (e) => {
         this.validateInputs();
         let formValidated = true;
@@ -50,6 +49,7 @@ class UseCertificateForm extends Component {
         }
         e.preventDefault();
     };
+
     validateInputs = () => {
         let errors = {...this.state.errorValidation};
         Object.keys(errors).map((key) =>{
@@ -58,6 +58,7 @@ class UseCertificateForm extends Component {
             return null
         })
     };
+
     validateText = (key) => {
         let errors = {...this.state.errorValidation};
 
@@ -76,6 +77,7 @@ class UseCertificateForm extends Component {
             }
         }
     };
+
     validateAgree = (key) => {
         let errors = {...this.state.errorValidation};
         if (key ==='Agree') {
@@ -93,6 +95,7 @@ class UseCertificateForm extends Component {
             }
         }
     };
+
     render() {
         return (
             <div className="UseCertificate__form">

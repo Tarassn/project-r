@@ -9,6 +9,7 @@ class Cart extends Component {
     componentDidMount(){
         this.totalSum();
     }
+
     totalSum = () =>{
         let total = Object.keys(this.props.order).reduce((previousValue, key) =>{
             const item = this.props.products[key];
@@ -17,13 +18,13 @@ class Cart extends Component {
         },0);
         return total
     };
+
     purchaseProducts = () => {
         alert(JSON.stringify(this.props.order));
         this.props.clearOrder();
-    }
-    render() {
-        console.log(this.props.toggleCart)
+    };
 
+    render() {
         return (
             <div className={'Cart'}>
                 <div>
@@ -54,7 +55,6 @@ class Cart extends Component {
                 <div>
                     <img className="cart_close-icon" alt="cart icon" src={closeIcon} onClick={this.props.toggleCart}/>
                 </div>
-
             </div>
         );
     }

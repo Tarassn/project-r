@@ -7,9 +7,7 @@ import SortProducts from "./SortProducts";
 
 class Filters extends Component {
 
-
     render() {
-
         return (
             <div className="filters">
                 <div className="filters__price">

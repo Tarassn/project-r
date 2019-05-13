@@ -6,17 +6,17 @@ import cartIcon from "../css/images/shopping-cart-of-checkered-design.png";
 import "../css/Header.scss";
 import Burger from './Burger';
 import NavigationItem from "./NavigationItem";
-import {Link} from "react-router-dom";
 import Cart from "./Cart";
 
 export default class Header extends Component {
-        state = {
-            navObj: navObj,
-            burgerOpen:false,
-            navOpen:false,
-            width: 0,
-            cartOpen:false,
-        };
+    state = {
+        navObj: navObj,
+        burgerOpen:false,
+        navOpen:false,
+        width: 0,
+        cartOpen:false,
+    };
+
     componentDidMount(){
         this.updateWindowDimensions();
         window.addEventListener('resize', this.updateWindowDimensions);
@@ -29,6 +29,7 @@ export default class Header extends Component {
     updateWindowDimensions = () => {
         this.setState({ width: window.innerWidth });
     };
+
     componentDidUpdate(){
 
     }
@@ -39,6 +40,7 @@ export default class Header extends Component {
         });
         e.currentTarget.classList.toggle('open')
     };
+
     toggleCart = () => {
         this.setState({
             cartOpen: !(this.state.cartOpen),
@@ -52,6 +54,7 @@ export default class Header extends Component {
         },0);
         return total
     };
+
     changeNavStyle = () => {
         if (this.state.width > 1024||this.state.burgerOpen){
             return {
@@ -62,8 +65,8 @@ export default class Header extends Component {
             display:'none'
         }
     };
-    render() {
 
+    render() {
         return (
             <header className="header">
                     <img src={logo} alt="logo" className="header__logo-img"/>

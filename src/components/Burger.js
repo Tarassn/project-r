@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Burger=(props)=>{
+const Burger = (props) => {
     return (
         <div className="header__burger" onClick={props.toggleBurger}>
             <span></span>
